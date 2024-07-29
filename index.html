@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            font-size: 16px;
+            background-color: rgb(184, 226, 242);
+        }
+
+        .w {
+            margin: auto 40%;
+            background-color: #fff;
+            border-radius: 5px;
+            height: 250px;
+        }
+
+        .core {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .title {
+            color: rgb(0, 170, 237);
+        }
+
+        .red {
+            color: red;
+        }
+
+        .all {
+            margin: auto 10%;
+        }
+
+        .ans {
+            margin: 3px 0px 0px 0px;
+        }
+
+        .border {
+            height: 35px;
+            width: 100%;
+            border: 1px solid #ccc;
+            line-height: 35px;
+        }
+        
+        .button {
+            margin-top: 30px;
+        }
+
+        .next {
+            /* margin: 30px 50px; */
+            margin: 0 70px;
+            text-align: center;
+            float: right;
+            width: 120px;
+            height: 40px;
+            background-color: rgb(53, 134, 255);
+            border: none;
+            border-radius: 5px;
+        }
+
+        .prev {
+            /* margin: 30px 50px; */
+            text-align: center;
+            float: left;
+            width: 120px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="core">
+            <h3 class="title">加班意向问卷调查</h3>
+        </div>
+        <div class="all">
+            <span class="red">*</span>
+            <span class="question">01 您是否愿意加班</span>
+            <div class="ans">
+                <div class="border">
+                    <input type="radio" name="01" value="1">同意
+                </div>
+                <div class="border">
+                    <input type="radio" name="01" value="0">不同意
+                </div>
+            </div>
+            <div class="button">
+                <button class="next">下一步</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let netxBtn = document.querySelector('.next')
+        netxBtn.addEventListener('click', function (e) {
+            if (document.querySelector('input[name]:checked')) {
+                if (document.querySelector('input[name]:checked').value === '1') {
+                    window.location.replace('index2.html')
+                } else {
+                    window.location.replace('index3.html')  
+                }
+            } else {
+                alert('请选择后再点击下一步')
+            }
+        })
+    </script>
+</body>
+
+</html>
